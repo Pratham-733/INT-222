@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Hub - Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Football-Logos.jpg" alt="Football Hub Logo">
+            </div>
+            <h1 class="header-title"><i><u><b>FOOTBALL HUB</b></u></i></h1>
+            <nav class="nav-links">
+                <a href="Home.html" class="nav-button">Home</a>
+                <a href="events.html" class="nav-button">Events</a>
+                <a href="login.html" class="nav-button">Login</a>
+                <a href="kits.html" class="nav-button">Kits</a>
+                <a href="teams.html" class="nav-button">Teams</a>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h2>Events</h2>
+        <p>Check out upcoming football events and matches.</p>
+
+        <label for="tournament-select">Select Tournament:</label>
+        <select id="tournament-select" onchange="showEvents()">
+            <option value="premier-league">Premier League</option>
+            <option value="la-liga">La Liga</option>
+            <option value="serie-a">Serie A</option>
+            <option value="bundesliga">Bundesliga</option>
+            <option value="ligue-1">Ligue 1</option>
+            <option value="uefa-champions-league">UEFA Champions League</option>
+            <option value="europa-league">Europa League</option>
+            <!-- Add more tournaments as needed -->
+        </select>
+
+        <section id="events-container">
+            <!-- Events will be displayed here based on the selected tournament -->
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Football Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showEvents() {
+            var selectBox = document.getElementById("tournament-select");
+            var selectedTournament = selectBox.value;
+            var eventsContainer = document.getElementById("events-container");
+
+            // Clear previous events
+            eventsContainer.innerHTML = "";
+
+            // Fetch and display events based on the selected tournament
+            switch (selectedTournament) {
+                case "premier-league":
+                    eventsContainer.innerHTML = `
+                        <h3>Premier League</h3>
+                        <ul>
+                            <li><strong>Sunday 14 April 2024</strong><br>
+                                Liverpool vs Crystal Palace<br>
+                                Anfield, Liverpool<br>
+                                18:30<br>
+                                
+                            </li>
+                            <li><strong>Sunday 14 April 2024</strong><br>
+                                West Ham vs Fulham<br>
+                                London Stadium, London<br>
+                                18:30<br>
+                                
+                            </li>
+                            <li><strong>Sunday 14 April 2024</strong><br>
+                                Arsenal vs Aston Villa<br>
+                                Emirates Stadium, London<br>
+                                21:00<br>
+                                
+                            </li>
+                            <li><strong>Tuesday 16 April 2024</strong><br>
+                                Chelsea vs Everton<br>
+                                Stamford Bridge, London<br>
+                                00:30<br>
+                                
+                            </li>
+                            <li><strong>Saturday 20 April 2024</strong><br>
+                                Luton vs Brentford<br>
+                                Kenilworth Road, Luton<br>
+                                19:30<br>
+                                
+                            </li>
+                            <li><strong>Saturday 20 April 2024</strong><br>
+                                Sheffield Utd vs Burnley<br>
+                                Bramall Lane, Sheffield<br>
+                                19:30<br>
+                                
+                            </li>
+                            <li><strong>Sunday 21 April 2024</strong><br>
+                                Wolves vs Arsenal<br>
+                                Molineux Stadium, Wolverhampton<br>
+                                00:00<br>
+                                
+                            </li>
+                            <li><strong>Sunday 21 April 2024</strong><br>
+                                Everton vs Nott'm Forest<br>
+                                Goodison Park, Liverpool<br>
+                                18:00<br>
+                                
+                            </li>
+                            <li><strong>Sunday 21 April 2024</strong><br>
+                                Aston Villa vs Bournemouth<br>
+                                Villa Park, Birmingham<br>
+                                19:30<br>
+                                
+                            </li>
+                            <li><strong>Sunday 21 April 2024</strong><br>
+                                Crystal Palace vs West Ham<br>
+                                Selhurst Park, London<br>
+                                19:30<br>
+                                
+                            </li>
+                            <li><strong>Sunday 21 April 2024</strong><br>
+                                Fulham vs TBD<br>
+                                Craven Cottage, London<br>
+                                21:00<br>
+                                
+                            </li>
+                            <!-- Add more Premier League fixtures here -->
+                        </ul>`;
+                    break;
+                case "la-liga":
+                    eventsContainer.innerHTML = `
+                        <h3>La Liga</h3>
+                        <ul>
+                            <li><strong>Sunday 14th April 2024</strong><br>
+                                Las Palmas vs Sevilla<br>
+                                13:00<br>
+                                
+                            </li>
+                            
+                            <li><strong>Sunday 14th April 2024</strong><br>
+                                Granada vs Alaves<br>
+                                15:15<br>
+                            </li>
+                            <li><strong>Sunday 14th April 2024</strong><br>
+                                Athletic Bilbao vs Villarreal<br>
+                                17:30<br>
+                            </li>
+                            <li><strong>Sunday 14th April 2024</strong><br>
+                                Real Sociedad vs Almeria<br>
+                                20:00<br>
+                            </li>
+                            <li><strong>Monday 15th April 2024</strong><br>
+                                Osasuna vs Valencia<br>
+                                20:00<br>
+                            </li>
+                            <li><strong>Friday 19th April 2024</strong><br>
+                                Athletic Bilbao vs Granada<br>
+                                20:00<br>
+                            </li>
+                            <!-- Add more La Liga fixtures here -->
+                        </ul>`;
+                    break;
+                case "serie-a":
+                    eventsContainer.innerHTML = `
+                        <h3>Serie A</h3>
+                        <ul>
+                            <!-- Add Serie A fixtures here -->
+                        </ul>`;
+                    break;
+                case "bundesliga":
+                    eventsContainer.innerHTML = `
+                        <h3>Bundesliga</h3>
+                        <ul>
+                            <!-- Add Bundesliga fixtures here -->
+                        </ul>`;
+                    break;
+                case "ligue-1":
+                    eventsContainer.innerHTML = `
+                        <h3>Ligue 1</h3>
+                        <ul>
+                            <!-- Add Ligue 1 fixtures here -->
+                        </ul>`;
+                    break;
+                case "uefa-champions-league":
+                    eventsContainer.innerHTML = `
+                        <h3>UEFA Champions League</h3>
+                        <ul>
+                            <li><strong>Wednesday 17 April 2024</strong><br>
+                                Real Madrid vs Barcelona<br>
+                                Santiago Bernabéu Stadium, Madrid<br>
+                                20:00<br>
+                                <a href="#">Quick View</a>
+                            </li>
+                            <!-- Add more Champions League fixtures here -->
+                        </ul>`;
+                    break;
+                case "europa-league":
+                    eventsContainer.innerHTML = `
+                        <h3>Europa League</h3>
+                        <ul>
+                            <li><strong>Thursday 18 April 2024</strong><br>
+                                Arsenal vs AC Milan<br>
+                                Emirates Stadium, London<br>
+                                19:45<br>
+                                <a href="#">Quick View</a>
+                            </li>
+                            <!-- Add more Europa League fixtures here -->
+                        </ul>`;
+                    break;
+                    // Add more cases for other tournaments if needed
+                default:
+                    eventsContainer.innerHTML = "<p>No events available for the selected tournament.</p>";
+                    break;
+            }
+        }
+
+        // Initially display events for the default selected tournament
+        showEvents();
+    </script>
+
+</body>
+
+</html>

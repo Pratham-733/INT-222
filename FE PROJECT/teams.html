@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Hub - Teams</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        #leagueSelector {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+        
+        #leagueSelector:hover {
+            border-color: #ff9900;
+            background-color: #fff;
+        }
+        
+        #leagueSelector:focus {
+            outline: none;
+            border-color: #ff9900;
+            background-color: #fff;
+        }
+        
+        .team-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9900;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .team-button:hover {
+            background-color: #ff6600;
+            transform: scale(1.05);
+        }
+        
+        .team-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Football-Logos.jpg" alt="Football Hub Logo">
+            </div>
+            <h1 class="header-title"><i><u><b>FOOTBALL HUB</b></u></i></h1>
+            <nav class="nav-links">
+                <a href="Home.html" class="nav-button">Home</a>
+                <a href="events.html" class="nav-button">Events</a>
+                <a href="login.html" class="nav-button">Login</a>
+                <a href="kits.html" class="nav-button">Kits</a>
+                <a href="teams.html" class="nav-button">Teams</a>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h2>Teams</h2>
+        <p>Select a football league to view its teams:</p>
+        <select id="leagueSelector" onchange="showTeams()">
+            <option value="premier-league">Premier League</option>
+            <option value="la-liga">La Liga</option>
+            <option value="serie-a">Serie A</option>
+            <option value="bundesliga">Bundesliga</option>
+            <option value="ligue-1">Ligue 1</option>
+        </select>
+
+        <div id="teamContainer">
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Football Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showTeams() {
+            var leagueSelector = document.getElementById("leagueSelector");
+            var selectedLeague = leagueSelector.value;
+            var teamContainer = document.getElementById("teamContainer");
+
+            var teams = {
+                "premier-league": [{
+                    name: "Arsenal",
+                    website: "https://www.arsenal.com/"
+                }, {
+                    name: "Chelsea",
+                    website: "https://www.chelseafc.com/en"
+                }, {
+                    name: "Man City",
+                    website: "https://www.mancity.com/"
+                }, {
+                    name: "Man United",
+                    website: "https://www.manutd.com/"
+                }, {
+                    name: "Liverpool",
+                    website: "https://www.liverpoolfc.com/"
+                }, {
+                    name: "Tottenham",
+                    website: "https://www.tottenhamhotspur.com/"
+                }, {
+                    name: "More",
+                    website: "https://www.premierleague.com/matchweek/12301/table"
+                }],
+                "la-liga": [{
+                    name: "Atletico Madrid",
+                    website: "https://en.atleticodemadrid.com/"
+                }, {
+                    name: "FC Barcelona",
+                    website: "https://www.fcbarcelona.com/en/"
+                }, {
+                    name: "Real Madrid CF",
+                    website: "https://www.realmadrid.com/en-US"
+                }, {
+                    name: "More",
+                    website: "https://www.laliga.com/en-GB/laliga-easports/standing"
+                }],
+                "serie-a": [{
+                    name: "AC Milan",
+                    website: "https://www.acmilan.com/en"
+                }, {
+                    name: "Inter Milan",
+                    website: "https://www.inter.it/en"
+                }, {
+                    name: "Juventus",
+                    website: "https://www.juventus.com/en/"
+                }, {
+                    name: "Napoli",
+                    website: "https://sscnapoli.it/en/"
+                }, {
+                    name: "Roma",
+                    website: "https://www.asroma.com/en"
+                }, {
+                    name: "More",
+                    website: "https://www.legaseriea.it/en/serie-a/classifica"
+                }],
+                "bundesliga": [{
+                    name: "Bayer 04 Leverkusen",
+                    website: "https://www.bayer04.de/en-us"
+                }, {
+                    name: "FC Bayern Munich",
+                    website: "https://fcbayern.com/en"
+                }, {
+                    name: "Dortmund",
+                    website: "https://www.bvb.de/eng"
+                }, {
+                    name: "More",
+                    website: "https://www.bundesliga.com/en/bundesliga/table"
+                }],
+                "ligue-1": [{
+                    name: "PSG",
+                    website: "https://en.psg.fr/"
+                }, {
+                    name: "More",
+                    website: "https://www.ligue1.com/ranking"
+                }]
+            };
+
+            teamContainer.innerHTML = "";
+
+            teams[selectedLeague].forEach(function(team) {
+                var teamButton = document.createElement("button");
+                teamButton.textContent = team.name;
+                teamButton.classList.add("team-button");
+                teamButton.onclick = function() {
+                    window.location.href = team.website;
+                };
+                teamContainer.appendChild(teamButton);
+            });
+        }
+
+        showTeams();
+    </script>
+
+</body>
+
+</html>

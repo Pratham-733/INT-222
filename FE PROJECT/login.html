@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Hub - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        /* Form container styles */
+        
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease-in-out;
+            color: #000;
+            /* Set text color to black */
+        }
+        
+        .form-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            /* Updated margin */
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input {
+            width: calc(100% - 22px);
+            /* Adjusted width to account for padding and border */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #000;
+            /* Set text color to black */
+        }
+        
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9900;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Indie Flower', cursive;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-group button:hover {
+            background-color: #ff6600;
+        }
+        /* Form animation */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Football-Logos.jpg" alt="Football Hub Logo">
+            </div>
+            <h1 class="header-title"><i><u><b>FOOTBALL HUB</b></u></i></h1>
+            <nav class="nav-links">
+                <a href="Home.html" class="nav-button">Home</a>
+                <a href="events.html" class="nav-button">Events</a>
+                <a href="login.html" class="nav-button">Login</a>
+                <a href="kits.html" class="nav-button">Kits</a>
+                <a href="teams.html" class="nav-button">Teams</a>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h2>Register</h2>
+        <p>Please login to access your account.</p>
+
+        <div class="form-container">
+            <h3 class="form-title">Register</h3>
+            <form id="loginForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="favoriteTeam">Favorite Team</label>
+                    <input type="text" id="favoriteTeam" name="favoriteTeam" required>
+                </div>
+                <div class="form-group">
+                    <label for="favoritePlayer">Favorite Player</label>
+                    <input type="text" id="favoritePlayer" name="favoritePlayer" required>
+                </div>
+                <div class="form-group">
+                    <label for="jerseyNumber">Jersey Number</label>
+                    <input type="number" id="jerseyNumber" name="jerseyNumber" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Football Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

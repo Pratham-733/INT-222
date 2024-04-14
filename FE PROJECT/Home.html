@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="Football-Logos.jpg" alt="Football Hub Logo">
+            </div>
+            <h1 class="header-title"><i><u><b>FOOTBALL HUB</b></u></i></h1>
+            <nav class="nav-links">
+                <a href="Home.html" class="nav-button">Home</a>
+                <a href="events.html" class="nav-button">Events</a>
+                <a href="login.html" class="nav-button">Login</a>
+                <a href="kits.html" class="nav-button">Kits</a>
+                <a href="teams.html" class="nav-button">Teams</a>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h2>Welcome to Football Hub</h2>
+        <p>This is the home page of Football Hub.</p>
+
+        <div class="home-buttons">
+            <button class="nav-button" onclick="scrollToSection('news')">News</button>
+            <button class="nav-button" onclick="scrollToSection('about')">About Us</button>
+            <button class="nav-button" onclick="scrollToSection('gallery')">Gallery</button>
+        </div>
+
+        <section id="news">
+            <h2>Latest Football News</h2>
+            <article>
+                <h3>Article Title</h3>
+                <p>Published on: Date</p>
+                <p>Summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are Football Hub, your ultimate destination for all things football.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="image-gallery">
+                <img src="Ronaldo.webp" alt="Gallery Image 1" class="gallery-slide">
+                <img src="Messi.jpeg" alt="Gallery Image 2" class="gallery-slide">
+                <img src="Mbappe.webp" alt="Gallery Image 3" class="gallery-slide">
+                <img src="Haaland.avif" alt="Gallery Image 4" class="gallery-slide">
+                <img src="Vinicius.webp" alt="Gallery Image 5" class="gallery-slide">
+                <img src="Lewa.jpg" alt="Gallery Image 6" class="gallery-slide">
+                <img src="Kane.webp" alt="Gallery Image 7" class="gallery-slide">
+                <!-- <img src="Salah.webp" alt="Gallery Image 8" class="gallery-slide">
+                <img src="Bellingham.jpg" alt="Gallery Image 9" class="gallery-slide"> -->
+            </div>
+            <button class="prev" onclick="plusSlides(-1)">❮ Prev</button>
+            <button class="next" onclick="plusSlides(1)">Next ❯</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Football Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function startSlideshow() {
+            let slides = document.getElementsByClassName("gallery-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(startSlideshow, 5000);
+        }
+
+        startSlideshow();
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("gallery-slide");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
